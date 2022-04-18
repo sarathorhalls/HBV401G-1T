@@ -1,10 +1,14 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 
+//sqlite3 1T.db
+//.read schema.sql
+//java -classpath ".;sqlite-jdbc-3.36.0.3.jar" dbSetup false false
 public class dbSetup {
     public static void main(String[] args) throws Exception {
 
@@ -20,7 +24,7 @@ public class dbSetup {
             conn.setAutoCommit(USE_AUTOCOMMIT);
 
             PreparedStatement pstmt = conn.prepareStatement(
-                    "INSERT INTO Users(ssn,username,firstname,lastname,email,password,isAdmin) VALUES(?,?,?,?,?,?,?)");
+                    "INSERT INTO Users(ssn,username,firstname,lastname,email,password,isAdmin) VALUES(?,?,?,?,?,?,?);");
 
             pstmt.clearParameters();
             pstmt.setString(1, "0101704490");
@@ -29,7 +33,22 @@ public class dbSetup {
             pstmt.setString(4, "Agnarsson");
             pstmt.setString(5, "oskaragnarson@gmail.com");
             pstmt.setString(6, "yessir");
-            pstmt.setBool(7, true);
+            pstmt.setBoolean(7, true);
+
+            pstmt.executeUpdate();
+            conn.commit();
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM Users");
+            ResultSet set = stmt.executeQuery();
+            ResultSetMetaData rsmd = set.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (set.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) System.out.print(",  ");
+                    String columnValue = set.getString(i);
+                    System.out.print(rsmd.getColumnName(i) +":"+columnValue);
+                }
+                System.out.println("");
+            }
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         } finally {
