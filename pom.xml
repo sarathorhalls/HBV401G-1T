@@ -18,6 +18,10 @@
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
   </properties>
 
+  <modules>
+    <module>./HBV401G-1F/pom.xml</module>
+  </modules>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
