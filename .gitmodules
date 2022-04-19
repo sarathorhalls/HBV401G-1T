@@ -1,3 +1,3 @@
 [submodule "HBV401G-1F"]
 	path = HBV401G-1F
-	url = git@github.com:dorijv/HBV401G-1F.git
+	url = https://github.com/dorijv/HBV401G-1F.git
