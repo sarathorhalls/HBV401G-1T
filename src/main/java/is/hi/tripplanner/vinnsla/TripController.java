@@ -10,9 +10,9 @@ public class TripController {
     private Date currentDate;
 
     public TripController() {
-        this.tourController = new MockTourController();
-        this.flightController = new MockFlightController();
-        this.hotelController = new MockHotelController();
+        tourController = new MockTourController();
+        flightController = new MockFlightController();
+        hotelController = new MockHotelController();
         currentDate = new Date();
     }
 
@@ -65,7 +65,7 @@ public class TripController {
         if (noOfTravelers < 1) {
             throw new Exception("There must be atleast one traveler.");
         }
-        if (flightDeparture.equals(null) || flightDeparture.isEmpty()) {
+        if (flightDeparture == null || flightDeparture.isEmpty()) {
             throw new Exception("No departure selected.");
         }
         if (tourBudget <= 0) {

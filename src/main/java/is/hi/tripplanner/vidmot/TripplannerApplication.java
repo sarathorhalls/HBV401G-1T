@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class tripplannerApplication extends Application {
+public class TripplannerApplication extends Application {
 
     private static Scene scene;
 
@@ -25,7 +25,7 @@ public class tripplannerApplication extends Application {
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(tripplannerApplication.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TripplannerApplication.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
