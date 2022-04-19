@@ -60,7 +60,7 @@
                 <execution>
                     <id>default-cli</id>
                     <configuration>
-                        <mainClass>is.hi.tripplanner.vidmot.tripplannerApplication</mainClass>
+                        <mainClass>is.hi.tripplanner.vidmot.TripplannerApplication</mainClass>
                     </configuration>
                 </execution>
             </executions>
