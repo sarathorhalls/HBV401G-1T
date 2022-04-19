@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 //sqlite3 1T.db
 //.read schema.sql
 //java -classpath ".;sqlite-jdbc-3.36.0.3.jar" dbSetup false false
-public class dbSetup {
+public class DbSetup {
     public static void main(String[] args) throws Exception {
 
         Class.forName("org.sqlite.JDBC");
