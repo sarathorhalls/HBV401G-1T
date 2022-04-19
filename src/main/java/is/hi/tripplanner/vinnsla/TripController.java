@@ -1,6 +1,8 @@
 package is.hi.tripplanner.vinnsla;
 
 import java.util.Date;
+import hi.vinnsla.Flight;
+import hi.vidmot.FlightController;
 
 public class TripController {
 
@@ -11,7 +13,7 @@ public class TripController {
 
     public TripController() {
         tourController = new MockTourController();
-        flightController = new MockFlightController();
+        flightController = new FlightController();
         hotelController = new MockHotelController();
         currentDate = new Date();
     }
@@ -27,6 +29,7 @@ public class TripController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        // TODO: figure out what to do here because 1F's FlightController.getFlight doesn't allow searches by date
         Flight[] flights = flightController.search(arrivalDate, departureDate, noOfTravelers, flightDeparture,
                 flightBudget);
         Tour[] tours = tourController.search(arrivalDate, departureDate, noOfTravelers, tourBudget);
