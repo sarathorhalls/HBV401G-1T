@@ -2,6 +2,7 @@ package is.hi.tripplanner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertThrows;
 
@@ -80,7 +81,7 @@ public class TestTripController {
     public void testNullDeparted() {
         Throwable exception = assertThrows(Exception.class,
                 () -> tripController.testInputs(JAN_01_2023, JAN_18_2023, 5, null, 450000, 450000, 450000));
-        assertEquals(null, exception.getMessage());
+        assertEquals("No departure selected.", exception.getMessage());
     }
 
     @Test

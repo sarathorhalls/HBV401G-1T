@@ -65,7 +65,7 @@ public class TripController {
         if (noOfTravelers < 1) {
             throw new Exception("There must be atleast one traveler.");
         }
-        if (flightDeparture.equals(null) || flightDeparture.isEmpty()) {
+        if (flightDeparture == null || flightDeparture.isEmpty()) {
             throw new Exception("No departure selected.");
         }
         if (tourBudget <= 0) {
