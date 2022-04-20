@@ -10,9 +10,9 @@ public class TripController {
     private Date currentDate;
 
     public TripController() {
-        tourController = new MockTourController();
-        flightController = new MockFlightController();
-        hotelController = new MockHotelController();
+        tourController = new TourController();
+        flightController = new FlightController();
+        hotelController = new HotelController();
         currentDate = new Date();
     }
 

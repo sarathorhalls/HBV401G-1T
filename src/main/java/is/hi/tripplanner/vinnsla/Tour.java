@@ -1,23 +1,61 @@
 package is.hi.tripplanner.vinnsla;
 
-import java.util.Date;
-import java.util.Random;
-
 public class Tour {
-    private long tourID;
+    private int tourId;
     private int tourDuration;
-    private int maximumCapacity;
-    private int currentCapacity;
-    private Date[] tourDates;
+    private int maxCapacity;
+    private int currCapacity;
+    private int date;
     private String language;
-    private int price;
+    private String category;
+    private int cost;
     private int priority;
 
-    public Tour() {
-        this.tourID = new Random().nextLong();
+    public Tour(int tourId, int tourDuration, int maxCapacity, int currCapacity, int date, String language, String category, int cost, int priority) {
+        this.tourId = tourId;
+        this.tourDuration = tourDuration;
+        this.maxCapacity = maxCapacity;
+        this.currCapacity = currCapacity;
+        this.date = date;
+        this.language = language;
+        this.category = category;
+        this.cost = cost;
+        this.priority = priority;
     }
 
-    public long getTourID() {
-        return this.tourID;
+    public int getTourId() {
+        return tourId;
+    }
+
+    public int getTourDuration() {
+        return tourDuration;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public int getCurrCapacity() {
+        return currCapacity;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public int getPriority() {
+        return priority;
     }
 }
