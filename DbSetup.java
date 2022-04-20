@@ -3,7 +3,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.PreparedStatement;
 
 //sqlite3 1T.db
